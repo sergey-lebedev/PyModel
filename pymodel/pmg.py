@@ -12,7 +12,7 @@ def main():
         GraphicsOptions.print_help()
         exit()
     else:
-        fsm = __import__(args[0])
+        fsm = __import__(args[0], fromlist = [''])
         fbasename = options.output if options.output else args[0]
         fname = '%s.dot' % fbasename
         dotfile(fname, fsm, options.transitionLabels, options.noStateTooltip,
