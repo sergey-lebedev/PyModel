@@ -34,7 +34,7 @@ class ProductModelProgram(object):
 
     # populate self.mp
     for mname in args: # args is list of module name
-      self.module[mname] = __import__(mname) 
+      self.module[mname] = __import__(mname, fromlist = ['']) 
       # In FSM and TestSuite, __init__  raises AttributeError
       #  if passed a module which does not contain the expected attributes
       try:
